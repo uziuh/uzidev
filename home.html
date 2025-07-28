@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-950 text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>uzi — Web Dev Portfolio</title>
+
+    <!-- Font Awesome 6 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .animate-hidden {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+      .animate-visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-gradient-to-b from-gray-900 to-black min-h-screen">
+    <header class="p-6 text-center animate-hidden">
+      <h1 class="text-4xl font-bold">
+         Hey, I'm <span class="text-purple-400">uzi</span> 
+      </h1>
+      <p class="mt-2 text-lg text-gray-400">
+      Modern Web Dev
+      </p>
+    </header>
+
+    <main class="p-6 max-w-3xl mx-auto space-y-12">
+      <!-- About Section -->
+      <section
+        class="bg-white/5 p-6 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 animate-hidden"
+      >
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <i class="fa-solid fa-cat mr-2"></i> About Me
+        </h2>
+        <p class="text-gray-300">
+          I'm a modern web developer who builds aesthetic, transparent UI
+          experiences. I love crafting websites with a clean vibe, and
+          sometimes I just hang out with music, code, or cool cats 😸.
+        </p>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        class="bg-white/5 p-6 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 animate-hidden"
+      >
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <i class="fa-solid fa-tools mr-2"></i> Projects
+        </h2>
+        <p class="text-gray-300">
+          Check out my full list of projects
+          <a href="/projects" class="text-purple-400 hover:underline"
+            >here →</a
+          >
+        </p>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        class="bg-white/5 p-6 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 animate-hidden"
+      >
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <i class="fa-solid fa-phone mr-2"></i> Contact
+        </h2>
+        <p class="text-gray-300">Find me on Discord: <code>uzi.dev</code></p>
+        <p class="text-gray-300">
+          GitHub:
+          <a href="https://github.com/uzi" class="text-purple-400 hover:underline"
+            >uzi</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer class="p-4 text-center text-gray-500 text-sm animate-hidden">
+      Made with 💜 by uzi from the trenches
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".animate-hidden");
+        elements.forEach((el) => {
+          el.classList.add("animate-visible");
+          el.classList.remove("animate-hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

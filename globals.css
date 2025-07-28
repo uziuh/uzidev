@@ -1,0 +1,313 @@
+/* === globals.css === */
+
+/* === Root Variables === */
+:root {
+  /* Colors */
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --green: #10b981;
+  --yellow: #f59e0b;
+  --indigo: #6366f1;
+  --pink: #ec4899;
+  --gray: #6b7280;
+
+  --bg-start: #0f172a;
+  --bg-end: #000000;
+
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+
+  --border-color: rgba(255 255 255 / 0.15);
+}
+
+/* === Reset and Base === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: var(--purple);
+  text-decoration: none;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  outline-offset: 2px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* Paragraphs */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Buttons and inputs */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Utility containers */
+.container {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* === Icon Boxes with Transparent Colored Backgrounds === */
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0.35rem;
+  margin-right: 0.4rem;
+  border-radius: 0.5rem;
+  background: rgba(255 255 255 / 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  color: inherit;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  cursor: default;
+}
+.icon-box:hover,
+.icon-box:focus-visible {
+  background: rgba(255 255 255 / 0.15);
+  border-color: rgba(255 255 255 / 0.3);
+  outline: none;
+}
+
+/* Icon colors */
+.icon-terminal { color: var(--purple); background: rgba(168, 85, 247, 0.1); }
+.icon-arrow { color: var(--blue); background: rgba(59, 130, 246, 0.1); }
+.icon-layer-group { color: var(--red); background: rgba(239, 68, 68, 0.1); }
+.icon-eye { color: var(--green); background: rgba(16, 185, 129, 0.1); }
+.icon-database { color: var(--yellow); background: rgba(245, 158, 11, 0.1); }
+.icon-globe { color: var(--indigo); background: rgba(99, 102, 241, 0.1); }
+.icon-pen-nib { color: var(--pink); background: rgba(236, 72, 153, 0.1); }
+.icon-github { color: var(--gray); background: rgba(107, 114, 128, 0.1); }
+.icon-heart { color: var(--red); background: rgba(239, 68, 68, 0.1); }
+
+/* === Glassmorphism Cards === */
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: rgba(255 255 255 / 0.05);
+  box-shadow: 0 4px 6px rgba(0 0 0 / 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+}
+
+/* Image wrapper for cards */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 12rem;
+  flex-shrink: 0;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  display: block;
+}
+
+.image-wrapper:hover img,
+.image-wrapper:focus-within img {
+  opacity: 0.8;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.image-wrapper:hover .image-overlay,
+.image-wrapper:focus-within .image-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Project content */
+.project-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.25rem;
+  color: var(--text-primary);
+}
+
+.project-content p {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  flex-grow: 1;
+  margin: 0 0 0.75rem;
+}
+
+.project-content a {
+  font-size: 0.875rem;
+  color: var(--purple);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: auto;
+  transition: text-decoration 0.3s ease;
+}
+
+.project-content a:hover,
+.project-content a:focus-visible {
+  text-decoration: underline;
+  outline-offset: 2px;
+}
+
+/* === Page Animations === */
+.page-enter {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.95);
+}
+
+/* Stagger fade-in for header and main content */
+.fade-delay {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.fade-delay.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Layout Helpers === */
+main {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+}
+
+header {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* === Responsive Grid for Projects (if needed) === */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
